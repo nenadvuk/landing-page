@@ -1,0 +1,117 @@
+.header {
+  &__logo {
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  
+  &__links {
+    a {
+      @include toRem(font-size, 18);
+      @include toRem(margin-left, 10);
+      color: $NavText;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    a.clicked {
+      color: $ActiveTitle;
+    }
+    a:hover {
+      text-decoration: none;
+      color: $ActiveTitle;
+    }
+  }
+
+  &__btn:focus {
+    outline: none;
+  }
+
+  &__btn {
+    transition: 0.2s;
+    display: inline-block;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    border-radius: 2px;
+    border: 1px solid $ActiveTitle;
+    outline: none;
+    background-color: transparent;
+    @include toRem(margin-left, 10);
+    @include toRem(font-size, 16);
+  }
+
+  &__btn:first-child:hover {
+    color: $ActiveTitle;
+  }
+
+  &__btn:last-child {
+    background-color: $ActiveTitle;
+    border-color: $ActiveTitle;
+    width: unset;
+    color: #ffffff;
+    outline: none;
+    transition: opacity 300ms ease-in-out;
+  }
+
+  &__btn:last-child:hover {
+    opacity: 0.7;
+  }
+
+  &__menu {
+    // background: rgba(47, 79, 79, 0.404);
+    background: white;
+    @include toRem(padding, 15);
+    position: absolute;
+    margin-top: 2rem;
+    width: 95%;
+    border-radius: 3px;
+
+    a {
+      color: $NavText;
+      display: block;
+      text-align: center;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid lightgray;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(47, 79, 79, 0.404);
+}
+
+// Mobile
+@include breakpoints-down(small) {
+  .header {
+    padding-top: 1rem;
+
+    .header__menu {
+      width: 90%;
+    }
+  }
+}
+
+@include breakpoints-up(medium) {
+  .nav {
+    display: block;
+  }
+}

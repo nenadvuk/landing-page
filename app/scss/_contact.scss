@@ -1,0 +1,79 @@
+.contact {
+  display: grid;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  &__in {
+    width: 80%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    @include toRem(padding, 10);
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.315);
+    border: 1px solid $ActiveTitle;
+  }
+
+  &__map {
+    padding: 1rem;
+    width: 100%;
+    height: auto;
+    flex: 50%;
+  }
+
+  &__map iframe {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__form {
+    padding: 1rem;
+    width: 100%;
+    height: auto;
+    flex: 50%;
+  }
+
+  &__form-txt {
+    width: 100%;
+    @include toRem(height, 40);
+    @include toRem(margin-bottom, 20);
+    @include toRem(padding, 15);
+    color: $NavText;
+    border: 1px solid $ActiveTitle;
+    border-radius: 7px;
+    outline: none;
+  }
+
+  &__form-txt::placeholder {
+    color: #aaa;
+  }
+
+  &__form-txtarea {
+    width: 100%;
+    @include toRem(height, 130);
+    @include toRem(margin-bottom, 20);
+    @include toRem(padding, 15);
+    color: $NavText;
+    border: 1px solid $ActiveTitle;
+    border-radius: 7px;
+    outline: none;
+  }
+
+  &__form-txtarea::placeholder {
+    color: #aaa;
+  }
+
+  &__form-btn {
+    width: 100%;
+    border: none;
+    outline: none;
+    margin: 0;
+    border-radius: 7px;
+    width: 100% !important;
+    cursor: pointer;
+    @include toRem(font-size, 18);
+    text-transform: uppercase;
+  }
+}

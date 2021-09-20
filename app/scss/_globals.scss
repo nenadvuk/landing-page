@@ -1,0 +1,82 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+  touch-action: manipulation;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: "Ubuntu", Helvetica, Arial, Lucida, sans-serif;
+  @include toRem(font-size, 18);
+  line-height: 1.3;
+  scroll-behavior: smooth;
+ 
+}
+
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+
+h1,h2 {
+  color: $ActiveTitle;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  padding: 1rem;
+}
+
+.box {
+  padding: 0 1rem;
+}
+
+// Flex styles
+
+.flex {
+  display: flex;
+
+  &-jc-sb {
+    justify-content: space-between;
+  }
+
+  &-jc-sa {
+    justify-content: space-around;
+  }
+
+  &-jc-c {
+    justify-content: center;
+  }
+
+  &-ai-c {
+    align-items: center;
+  }
+}
+
+// Hide on different sizes
+
+// Mobile
+.hide-for-mobile {
+  @include breakpoints-down(small) {
+    display: none;
+  }
+}
+
+// Tablet
+.hide-for-tablet {
+  @include breakpoints-up(medium) {
+    display: none;
+  }
+}
+
+// Desktop
+.hide-for-desktop {
+  @include breakpoints-up(large) {
+    display: none;
+  }
+}

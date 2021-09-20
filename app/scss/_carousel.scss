@@ -1,0 +1,40 @@
+
+.brands {
+  margin: 2rem auto;
+  outline:none;
+  overflow: hidden;
+  @include toRem(height, 550);
+
+}
+
+.carousel-indicators li {
+  display: none;
+}
+
+
+// Desktop
+@include breakpoints-up(large) {
+  .card {
+    width: 25rem;
+    
+  }
+}
+
+// Tablet
+@include breakpoints-up(medium) {
+  .card {
+    width: 20rem;
+    
+  }
+}
+
+// Mobile
+@include breakpoints-down(small) {
+  .card {
+    width: 15rem;
+   
+    
+  }
+}
+
+

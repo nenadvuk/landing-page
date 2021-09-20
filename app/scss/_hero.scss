@@ -1,0 +1,41 @@
+.hero {
+  @include breakpoints-up(large) {
+    &__image {
+      height: 43.75rem;
+    }
+  }
+  
+
+  &__image {
+    margin: 1rem 0 2rem 0;
+    background-image: url(/images/dark-clouds.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+    @include toRem(min-height, 400);
+    z-index: -1;
+    
+  }
+
+  &__logo {
+    padding: 1rem;
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  &__text {
+    text-align: center;
+    @include toRem(font-size, 18);
+    font-family: 'Montserrat', sans-serif;
+  }
+
+
+}
